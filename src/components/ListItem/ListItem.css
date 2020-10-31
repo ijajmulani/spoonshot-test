@@ -1,0 +1,44 @@
+
+.card {
+  background: white;
+  text-decoration: none;
+  color: #444;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  
+  position: relative;
+  top: 0;
+  transition: all .1s ease-in;
+  border-radius: 4px;
+}
+
+.card:hover {
+  top: -2px;
+  box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+}
+
+
+.thumb {
+  background-size: cover;
+  background-position: center center;
+  height: 250px;
+  width: 100%;
+  position: relative;
+}
+
+.title {
+  font-size: 16px;
+  margin: 0;
+  color: #333;
+}
+.detail-box {
+  padding: 10px;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 4px 4px 0 0;
+  position: absolute;
+  top: 0px;
+}
