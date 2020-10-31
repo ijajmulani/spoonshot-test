@@ -1,0 +1,53 @@
+.cast-wrapper {
+  margin-top: 51px;
+}
+.cast-heading{
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+.actors {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(6, 1fr);
+}
+.actor-card {
+  width: 256px;
+}
+.actor-image {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  
+}
+.actor-name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  display: block;
+  margin-top: 25px;
+  margin-bottom: 8px;
+}
+
+.actor-character {
+  font-size: 16px;
+  line-height: 19px;
+  color: #888888;
+}
+.cast-heading-wrapper{ 
+  display: flex;
+  margin-bottom: 26px;
+  align-items: center;
+}
+.navigation-icons {
+  margin-left: auto;
+}
+
+.left-nav, .right-nav {
+  height: 44px;
+  width: 44px;
+  fill: #888888;
+}
+.left-nav.active, .right-nav.active {
+  fill: #000;
+}

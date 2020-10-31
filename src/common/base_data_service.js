@@ -2,9 +2,14 @@ import { AppConfig } from "./config";
 
 export default class BaseDataService {
 
-  getData = (methodName, onError, onSuccess) => {
+  getData = (methodName, data = {}, onError, onSuccess) => {
     const appConfig = AppConfig.BaseAPI;
-    const responsePromise = fetch(`${appConfig}${methodName}`)
+    const params = new URLSearchParams({...data, 
+      api_key: AppConfig.APIKey,
+      language: 'en-US',
+    });
+     
+    const responsePromise = fetch(`${appConfig}${methodName}?${params}`)
     this.onResponseReceipt(responsePromise, onError, onSuccess);
   }
 

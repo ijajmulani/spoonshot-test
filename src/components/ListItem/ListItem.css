@@ -2,43 +2,37 @@
 .card {
   background: white;
   text-decoration: none;
-  color: #444;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  
-  position: relative;
-  top: 0;
-  transition: all .1s ease-in;
-  border-radius: 4px;
+  color: #000;
 }
-
-.card:hover {
-  top: -2px;
-  box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+.card:not(:nth-child(-n+4)){
+  margin-top: 80px;
 }
-
 
 .thumb {
-  background-size: cover;
-  background-position: center center;
-  height: 250px;
   width: 100%;
-  position: relative;
 }
 
 .title {
-  font-size: 16px;
-  margin: 0;
-  color: #333;
-}
-.detail-box {
-  padding: 10px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  display: block;
 }
 
-img {
-  height: 100%;
+.release-date {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  margin-top: 8px;
+  display: block;
+}
+
+.detail-box {
+  margin-top: 16px;
+}
+
+.poster {
+  height: 380px;
   width: 100%;
-  object-fit: cover;
-  border-radius: 4px 4px 0 0;
-  position: absolute;
-  top: 0px;
+  border-radius: 16px;
 }

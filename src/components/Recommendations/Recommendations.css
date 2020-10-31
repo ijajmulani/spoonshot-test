@@ -1,0 +1,39 @@
+.recommendations-heading{
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 20px;
+  margin-top: 67px;
+}
+
+.recommendation-img {
+  width: 348px;
+  height: 174px;
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+}
+
+.recommendation-title{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000;
+  margin-top: 16px;
+  display: inline-block;
+} 
+.recommendation-card {
+  display: inline-block;
+  margin-right: 20px;
+}
+.recommendation-card:last-of-type {
+  margin-right: 0;
+}
+.recommendations-wrapper {
+  margin-bottom: 20px;
+}
+.recommendation-percentage{
+  float: right;
+  margin-top: 18px;
+  color: #000;
+}

@@ -1,86 +1,32 @@
 import React from 'react';
-import './App.css';
+import Home from '../Home/Home';
 import Header from '../Header/Header';
-// import List from '../Lists/Lists';
-import TMDBCommunication from '../../communications/tmdb_communication';
-import HeroSearch from '../HeroSearch/HeroSearch';
-import CategoryList from '../CategoryList/CategoryList';
+import MovieDetails from '../MovieDetails/MovieDetails';
 
-class App extends React.Component {
-  animeCommunication;
-  limit = 20;
-  pageNumber = 1;
-
+export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.tmdbCommunication = new TMDBCommunication();
-    const searchParams = new URLSearchParams(window.location.search);
-    const query = searchParams.get("query");
-
     this.state = {
-      results: [], 
-      loading : false,
-      isEnd: false,
-      searchQuery: query ? query.trim() : '',
+      movieId: "",
     };
   }
 
-  componentDidMount() {
-    // if (this.state.searchQuery) {
-    //   this.onSearchEvent(this.state.searchQuery);
-    // }
-  }
-
-  onSearchEvent = (query) => {
-    this.pageNumber = 1;
-    const searchQuery = query.trim();
-    if (searchQuery.length < 3) {
-      alert("Error: Requires atleast 3 or more characters");
-      return
-    }
-
+  onMovieClickEvent = (e, movieId) => {
+    e.preventDefault();
     this.setState({
-      loading: true,
-      results: [],
-      searchQuery: searchQuery,
-    });
-    this.fetchData(searchQuery);
-  } 
-
-  onLoadMoreEvent = () => {
-    this.setState({
-      loading: true,
-    });
-    this.pageNumber++;
-    this.fetchData(this.state.searchQuery);
-  }
-
-  fetchData = (query) => {
-    this.animeCommunication.getDataByQuery(query, this.pageNumber, this.limit).then((resp) => {
-      const data = resp.results || [];
-      this.setState((state) => ({
-        results: state.results.concat(data),
-        loading: false,
-        isEnd: resp.last_page === this.pageNumber,
-      }));
-    }).catch(error => {
-      this.setState({
-        results: [],
-        loading: false,
-        isEnd: false,
-      });
-    });
+      movieId,
+    })
   }
 
   render() {
-    const {loading, results, isEnd, searchQuery}  = this.state;
-    return (
-      <div className="container">
-        <HeroSearch />
-        <CategoryList />
-      </div>
-    );
+    const { movieId } = this.state;
+    return(
+      <React.Fragment>
+        <Header/>
+        <div className="container">
+          {movieId ? <MovieDetails key={movieId} movieId={movieId} /> : <Home onMovieClickEvent={this.onMovieClickEvent} /> }
+        </div>
+      </React.Fragment>
+    )
   }
 }
-
-export default App;

@@ -1,6 +1,6 @@
 .card-container {
   width: 100%;
-  margin: 0 auto 20px auto;
+  margin: 56px auto 20px auto;
   
   display: grid;
   
@@ -30,17 +30,22 @@
 
 @media only screen and (min-width: 1000px) {
   .card-container {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
 .load-more-btn {
+  background: rgb(104, 85, 214);
+  border-radius: 12px;
+  height: 56px;
   outline: none;
-  border: 1px solid #ccc;
-  background-color: #021737;
-  padding: 10px 25px;
+  border: none;
+  padding: 18px 50px;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 600;
   color: #fff;
-  margin: 20px auto;
+  margin: 80px auto;
   display: block;
   cursor: pointer;
 }

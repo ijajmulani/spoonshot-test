@@ -16,13 +16,14 @@
 }
 
 .header-links {
-  font-family: Roboto;
-  font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
   color: #000000;
   margin-right: 46px;
+}
+.header-links:last-of-type {
+  margin-right: 0;
 }
 
 .header-nav-links {

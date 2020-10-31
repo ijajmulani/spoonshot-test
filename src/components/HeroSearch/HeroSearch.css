@@ -35,7 +35,7 @@
   padding-left: 63px;
 }
 .search-btn {
-  background: rgba(104, 85, 214, 0.54);
+  background: rgba(104, 85, 214, 1);
   border-radius: 12px;
   height: 56px;
   outline: none;
@@ -45,9 +45,13 @@
   font-size: 16px;
   line-height: 19px;
   font-weight: 600;
+  color: rgb(255, 255, 255);
+
 }
 
 .search-btn.disable {
+  background: rgba(104, 85, 214, 0.54);
+
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -60,9 +64,3 @@
   margin-left: 20px;
 }
 
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
-  -webkit-appearance:none;
-}

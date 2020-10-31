@@ -1,15 +1,37 @@
 import React from 'react';
 import './HeroSearch.css'
+import classNames from 'classnames';
+
 
 export default class HeroSearch extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      searchQuery: '',
+    }
+  }
+  
+  handleChange = (e) => {
+    this.setState({searchQuery: e.target.value});
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    if (this.state.searchQuery) {
+      this.props.onSearchEvent(this.state.searchQuery);
+    }
+  }
+
   render() {
+    const { searchQuery } = this.state;
+    const isEnable = searchQuery !== '';
     return (
       <div className="hero-search-wrapper">
           <h2 className="search-title">Find perfect movie for <b>evening</b></h2>
-          <form className="search-form">
+          <form onSubmit={this.handleSubmit } className="search-form">
             <svg className="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-            <input  type="search" className="search-input-field" placeholder="Search movies" /> 
-            <button type="submit" className="search-btn disable">SEARCH</button>
+            <input  type="search" value={searchQuery} onChange={this.handleChange} className="search-input-field" placeholder="Search movies" /> 
+            <button type="submit" onClick={this.handleSubmit} className={classNames('search-btn', isEnable ? '' : 'disable') }>SEARCH</button>
           </form>
       </div>
     );

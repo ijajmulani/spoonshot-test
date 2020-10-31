@@ -1,0 +1,43 @@
+.overview-wrapper {
+  margin-top: 70px;
+  display: flex;
+  margin-bottom: 46px;
+}
+
+.overview-wrapper .left{
+  width: 716px;
+}
+.overview-text {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+.description {
+  font-size: 16px;
+  line-height: 22px;
+  text-align: justify;
+  color: #888888;
+  margin-top: 16px;
+}
+.overview-wrapper .right {
+  margin-left: auto;
+}
+
+.overview-wrapper .heading {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.overview-wrapper .value {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 16px;
+}
+
+.director-details-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 23px ;
+}

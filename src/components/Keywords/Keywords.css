@@ -1,0 +1,21 @@
+.keywords-heading{
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+.keywords-wrapper {
+  margin-left: auto;
+  width: 320px;
+}
+.keyword {
+  background: #F7F7F7;
+  border-radius: 8px;
+  padding: 7px 12px;
+  color: #000;
+  display: inline-block;
+  margin: 0 9px 9px 0;
+}
+.keywords-wrapper li {
+  display: inline-block;
+}
