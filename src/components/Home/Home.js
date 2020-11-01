@@ -4,6 +4,8 @@ import TMDBCommunication from '../../communications/tmdb_communication';
 import HeroSearch from '../HeroSearch/HeroSearch';
 import GenreList from '../GenreList/GenreList';
 import Lists from '../Lists/Lists';
+import { withRouter } from "react-router";
+
 
 class Home extends React.Component {
   constructor(props) {
@@ -13,6 +15,11 @@ class Home extends React.Component {
       genreId: -1,
       searchKey: '',
     };
+  }
+
+  useQuery = () => {
+    const { location } = this.props;
+    return new URLSearchParams(location.search);
   }
 
   onGenreSelected = (genreId) => {
@@ -30,23 +37,27 @@ class Home extends React.Component {
   render() {
     const { genreId, searchKey } = this.state;
     const listsKey = searchKey || genreId;
+    const query = this.useQuery();
+    const category = query.get('category') || '';
+
     return (
       <React.Fragment>
         <HeroSearch onSearchEvent={this.onSearchEvent} />
         {searchKey ? 
-          <div className="search-text">Showing results for <b> ‘{searchKey}’</b></div> 
+          <div className="search-text">Showing results for <b>‘{searchKey}’</b></div> 
           : 
-          <GenreList onGenreSelected={this.onGenreSelected} />
+          <GenreList selectedCategory={category} onGenreSelected={this.onGenreSelected} />
         }
-        {(genreId && genreId > -1) ? (<Lists 
+        {genreId !== -1 || searchKey !== "" ? <Lists 
           loading={true} 
           key={listsKey} 
           searchKey={searchKey} 
           genreId={genreId}  
-          />)  : null}
+        /> : null }
+        
       </React.Fragment>
     );
   }
 }
 
-export default Home;
+export default withRouter(Home); 
