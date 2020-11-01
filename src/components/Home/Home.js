@@ -15,10 +15,6 @@ class Home extends React.Component {
     };
   }
 
-  componentDidMount() {
-    
-  }
-
   onGenreSelected = (genreId) => {
     this.setState({
       genreId,
@@ -29,12 +25,6 @@ class Home extends React.Component {
     this.setState({
       searchKey: searchKey,
     })
-  }
-
-  onMovieClickEvent = (e, movieId) => {
-    if (this.props.onMovieClickEvent) {
-      this.props.onMovieClickEvent(e, movieId)
-    }
   }
 
   render() {
@@ -53,7 +43,6 @@ class Home extends React.Component {
           key={listsKey} 
           searchKey={searchKey} 
           genreId={genreId}  
-          onMovieClick={this.onMovieClickEvent}
           />)  : null}
       </React.Fragment>
     );

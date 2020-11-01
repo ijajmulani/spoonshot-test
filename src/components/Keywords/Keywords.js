@@ -25,7 +25,7 @@ export default class Keywords extends React.Component {
     return (
       <div className="keywords-wrapper">
         <h2 className="keywords-heading">Keywords</h2>
-          {keywords.length ? (
+          {keywords && keywords.length ? (
             <ul>
               {keywords.map((keyword) => (
                 <li key={keyword.id} ><a className="keyword" href={`/keyword/${keyword.id}`}>{keyword.name}</a></li>

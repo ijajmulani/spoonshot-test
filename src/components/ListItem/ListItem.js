@@ -11,7 +11,7 @@ export default class ListItem extends React.Component {
   render() {
     const {title, release_date, poster_path, id} = this.props.data;
     return (
-      <a onClick={(e) => this.props.onMovieClick(e, id)} href={`/${id}`} className="card">
+      <a onClick={(e) => this.props.onMovieClick(e, id)} href={`movie/${id}`} className="card">
         <div className="thumb">
           <img className="poster" loading="lazy" onError={this.onError} src={`${AppConfig.Poster342BaseURL}${poster_path}`} alt={title} />
         </div>

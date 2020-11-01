@@ -25,9 +25,9 @@ export default class Recommendations extends React.Component {
     const { recommendations } = this.state;
 
     return (
-      recommendations ? (
         <div className="recommendations-wrapper">
           <h2 className="recommendations-heading">Recommendations</h2>
+          {recommendations && recommendations.length ? (
             <ul>
               {recommendations.slice(0, 3).map((recommendation) => (
                 <li className="recommendation-card" key={recommendation.id}>
@@ -39,8 +39,8 @@ export default class Recommendations extends React.Component {
                 </li>
               ))}
             </ul>
+          ) : <div>No keywords found</div>}
         </div>
-      ) : null
     ) 
   }
 }

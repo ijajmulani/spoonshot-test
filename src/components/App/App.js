@@ -2,31 +2,29 @@ import React from 'react';
 import Home from '../Home/Home';
 import Header from '../Header/Header';
 import MovieDetails from '../MovieDetails/MovieDetails';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      movieId: "",
-    };
-  }
-
-  onMovieClickEvent = (e, movieId) => {
-    e.preventDefault();
-    this.setState({
-      movieId,
-    })
-  }
 
   render() {
-    const { movieId } = this.state;
     return(
-      <React.Fragment>
+      <Router>
         <Header/>
         <div className="container">
-          {movieId ? <MovieDetails key={movieId} movieId={movieId} /> : <Home onMovieClickEvent={this.onMovieClickEvent} /> }
+          <Switch>
+            <Route path={`/movie/:movieId`}>
+              <MovieDetails />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
         </div>
-      </React.Fragment>
+      </Router>
     )
   }
 }

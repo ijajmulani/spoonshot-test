@@ -55,11 +55,6 @@ export default class Lists extends React.Component {
     })
   }
 
-  onMovieClick = (e, movieId) => {
-    if (this.props.onMovieClick) {
-      this.props.onMovieClick(e, movieId);
-    }
-  }
 
   render() {
     const {data, page, loading} = this.state;
@@ -69,7 +64,7 @@ export default class Lists extends React.Component {
           <div>
             <div className='card-container'>
               {data.results.map((item) => (
-                <ListItem key={item.id} data={item} onMovieClick={this.onMovieClick} />
+                <ListItem key={item.id} data={item} />
               ))}
             </div>
             {(data.total_pages === 0 || data.total_pages === page || loading) ? null : <button className="load-more-btn" onClick={this.onLoadMoreClick}>Load More</button>}

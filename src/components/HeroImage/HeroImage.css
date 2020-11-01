@@ -1,0 +1,55 @@
+.hero-image-wrapper {
+  position: relative;
+}
+
+
+.shadow {
+  width: 100%;
+  height: 170px;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 50%);
+  border-radius: 0 0 16px 16px;
+}
+.hero-image {
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+
+.details-wrapper {
+  position: absolute;
+  bottom: 24px;
+  color: #fff;
+  left: 40px;
+}
+.movie-name {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+}
+.details {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.user-score {
+  position: absolute;
+  right: 40px;
+  bottom: 24px;
+  width: 62px;
+  height: 62px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #139810;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
