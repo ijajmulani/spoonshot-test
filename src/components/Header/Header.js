@@ -5,11 +5,11 @@ export default class Header extends React.Component {
   render() {
     return (
       <header className="header-section">
-        <a className="logo" href="/">Cinibuzz</a>
+        <a className="logo" href="/spoonshot-test/build/">Cinibuzz</a>
         <nav className="header-nav-links">
-          <a className="header-links" >Movie</a>
-          <a className="header-links">TV Shows</a>
-          <a className="header-links" >Kids</a>
+          <a href="/spoonshot-test/build/" className="header-links" >Movie</a>
+          <a href="/spoonshot-test/build/" className="header-links">TV Shows</a>
+          <a href="/spoonshot-test/build/" className="header-links" >Kids</a>
         </nav>
       </header>
     );
