@@ -39,7 +39,7 @@ export default class Recommendations extends React.Component {
                 </li>
               ))}
             </ul>
-          ) : <div>No keywords found</div>}
+          ) : <div>No recommendations found</div>}
         </div>
     ) 
   }
