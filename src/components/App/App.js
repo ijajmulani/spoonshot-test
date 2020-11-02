@@ -16,7 +16,7 @@ export default class App extends React.Component {
         <Header/>
         <div className="container">
           <Switch>
-            <Route path={`/spoonshot-test/build/movie/:movieId`}>
+            <Route path={`/movie/:movieId`}>
               <MovieDetails />
             </Route>
             <Route path="/">

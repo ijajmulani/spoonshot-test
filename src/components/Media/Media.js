@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { AppConfig } from '../../common/config';
 import './Media.css';
 
@@ -12,10 +13,10 @@ export default class Media extends React.Component {
       <div className="media-wrapper">
         <h3 className="media-heading">Media</h3>
         <ul className="media-panel-wrapper">
-          <li className="media-panel active"><a href="#">Most Popular</a></li>
-          <li className="media-panel"><a href="#">Videos</a></li>
-          <li className="media-panel"><a href="#">Backdrops</a></li>
-          <li className="media-panel"><a href="#">Poster</a></li>
+          <li className="media-panel active"><Link to="/">Most Popular</Link></li>
+          <li className="media-panel"><Link href="/">Videos</Link></li>
+          <li className="media-panel"><Link href="/">Backdrops</Link></li>
+          <li className="media-panel"><Link href="/">Poster</Link></li>
         </ul>
         <img onError={this.onError} className="media-image" src={`${AppConfig.Poster780BaseURL}${this.props.details.poster_path}`} alt={this.props.details.title} />
       </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { AppConfig } from '../../common/config';
 import './ListItem.css';
 
@@ -11,7 +12,7 @@ export default class ListItem extends React.Component {
   render() {
     const {title, release_date, poster_path, id} = this.props.data;
     return (
-      <a href={`movie/${id}`} className="card">
+      <Link to={`movie/${id}`} className="card">
         <div className="thumb">
           <img className="poster" loading="lazy" onError={this.onError} src={`${AppConfig.Poster342BaseURL}${poster_path}`} alt={title} />
         </div>
@@ -19,7 +20,7 @@ export default class ListItem extends React.Component {
           <span className="title">{title}</span> 
           <span className="release-date">{release_date}</span> 
         </div>
-      </a>
+      </Link>
     );
   }
 }
